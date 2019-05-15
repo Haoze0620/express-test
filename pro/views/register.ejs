@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+</head>
+<body>
+    <h1>注册</h1>
+    <div>
+        <div class="form-group">
+          <label for="userName">账号</label>
+          <input type="text" class="form-control" id="userName" placeholder="输入账号">
+          <small id="emailHelp" class="form-text text-muted">用户名或电话号码</small>
+        </div>
+        <div class="form-group">
+          <label for="password1">密码</label>
+          <input type="password" class="form-control" id="password" placeholder="输入密码">
+        </div>
+        <button type="submit" id="btnRegister" class="btn btn-primary">注册</button>
+    </div>
+</body>
+<script src="/javascripts/jquery-1.11.0.js"></script>
+<script>
+    $('#btnRegister').click(function(){
+        $.ajax({
+            type:'post',
+            url:'/register',
+            data:{name:$('#userName').val(),password:$('#password').val()},
+            success:function(data){
+                console.log(data);
+                if(data==1){
+                    alert('注册成功');
+                    location.href='/login';
+                }else{
+                    alert('用户名已被注册');
+                }
+                
+                // alert('登陆成功');
+            }
+        })
+    })
+</script>
+</html>

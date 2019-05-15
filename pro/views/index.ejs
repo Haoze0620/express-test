@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>首页</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+</head>
+
+<body>
+  <h1>首页</h1>
+  <% if(name){ %>
+  <h1>欢迎-：<%-name %></h1>
+  <button class="btn btn-primary" id="btnExit" onclick="location.href='/relogin'">注销</button>
+  <button class="btn btn-success" id="btnSend" onclick="location.href='/boke'">博客</button>
+  <%}else{%>
+  <button class="btn-success btn" id="btnLogin" onclick="location.href='/login'">登陆</button>
+  <button class="btn-primary btn" id="btnRegister" onclick="location.href='/register'">注册</button>
+  <%}%>
+
+</body>
+<script>
+
+
+</script>
+
+</html>
